@@ -1,0 +1,28 @@
+<div class="header">
+    <h1>Student List</h1>
+    <button (click)="addStudent()" class="btn btn-primary float-right  margin-left-10">Add</button>
+    <button (click)="logout()" class="btn btn-info float-right" (click)="logout()">Logout</button>
+</div>
+    <table class="table">
+<tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Date of birth</th>
+    <th>Actions</th>
+</tr>
+<tr *ngFor="let student of studentList">
+    <td>
+        {{student.name}}
+    </td> 
+    <td>
+        {{student.address}}
+    </td>
+    <td>
+        {{student.dob | date:'dd-MM-yyyy'}}
+    </td>
+    <td>
+        <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
+        <button type="button" (click)="editStudent(student.id)" class="btn btn-secondary margin-left-10">Edit</button>
+    </td>
+</tr>
+    </table>
